@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NiveshRakshak AI — Investor Safety Copilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="shield">◆</span><span>Nivesh<span>Rakshak</span> <small>AI</small></span></div>
+  <div class="nav-right"><span class="pill">SANGYAN HACKATHON</span><span class="iit">IIT (BHU) × SEBI × NSDL</span></div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">AI-POWERED INVESTOR SAFETY</div>
+    <h1>Detect. Understand.<br><span>Verify.</span> Before You Invest.</h1>
+    <p>Analyze investment messages, screenshots and documents for potential red flags — and understand complex financial information in simple language.</p>
+    <div class="hero-actions">
+      <a href="#analyzer" class="btn primary">Analyze an Investment →</a>
+      <a href="#how" class="btn ghost">How it works</a>
+    </div>
+    <div class="trust"><span>●</span> Education-first &nbsp; • &nbsp; No Buy/Sell recommendations</div>
+  </div>
+  <div class="hero-card">
+    <div class="card-top"><span>INVESTOR SAFETY SCORE</span><span class="live">● LIVE DEMO</span></div>
+    <div class="score-ring"><strong id="heroScore">18</strong><small>/100</small></div>
+    <div class="risk">HIGH RISK</div>
+    <div class="mini-bars">
+      <div><span>Guaranteed returns</span><b>Critical</b></div>
+      <div><span>Urgency / FOMO</span><b>High</b></div>
+      <div><span>Missing disclosure</span><b>High</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="analyzer" class="section">
+  <div class="section-head"><div><div class="eyebrow">01 / ANALYZE</div><h2>Check before you trust.</h2></div><p>Paste a message or upload an image. The demo engine highlights common investment manipulation patterns.</p></div>
+  <div class="workspace">
+    <div class="input-panel">
+      <div class="tabs"><button class="tab active" data-tab="message">Message</button><button class="tab" data-tab="upload">Screenshot</button></div>
+      <textarea id="messageInput" placeholder="Paste an investment message here…">🔥 GUARANTEED 40% RETURN!
+Buy XYZ today. Target ₹180.
+Only 2 hours left! Our SEBI registered expert recommends it.
+Send ₹5,000 now to activate your premium signal.</textarea>
+      <div id="uploadBox" class="upload hidden">
+        <div class="upload-icon">↑</div><strong>Drop screenshot here</strong><span>PNG, JPG up to 10 MB</span>
+        <input type="file" id="fileInput" accept="image/*">
+      </div>
+      <button class="btn primary full" id="analyzeBtn">Run Safety Analysis</button>
+      <div class="disclaimer">Demo analysis only. A high-risk score is not proof of fraud. Always verify claims independently.</div>
+    </div>
+    <div class="result-panel">
+      <div class="result-empty" id="emptyResult">
+        <div class="radar">✦</div><h3>Analysis appears here</h3><p>We'll identify potential red flags and explain what to verify.</p>
+      </div>
+      <div id="result" class="hidden">
+        <div class="result-header"><div><span class="label">SAFETY SCORE</span><div class="big-score"><span id="score">18</span><small>/100</small></div></div><div class="risk-badge" id="riskBadge">HIGH RISK</div></div>
+        <div class="progress"><i id="progress"></i></div>
+        <h3>Potential red flags detected</h3>
+        <div id="flags" class="flags"></div>
+        <div class="verify"><strong>🔎 What to verify next</strong><p>Verify the sender's identity and registration claims through official sources. Check whether returns are presented with appropriate risk disclosures and avoid transferring money under pressure.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section light">
+  <div class="eyebrow">02 / HOW IT WORKS</div><h2>From confusion to informed action.</h2>
+  <div class="steps">
+    <div class="step"><span>01</span><h3>Upload</h3><p>Share a message, screenshot or financial document.</p></div>
+    <div class="step"><span>02</span><h3>Extract</h3><p>AI identifies claims, promises, urgency cues and missing context.</p></div>
+    <div class="step"><span>03</span><h3>Explain</h3><p>Each red flag is translated into plain, beginner-friendly language.</p></div>
+    <div class="step"><span>04</span><h3>Verify</h3><p>Get practical checks to perform before taking action.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><div class="eyebrow">03 / FEATURES</div><h2>Built for first-time investors.</h2></div></div>
+  <div class="features">
+    <article><div class="icon">◈</div><h3>AI Scam Detector</h3><p>Flags guaranteed-return language, urgency, authority claims and suspicious payment requests.</p></article>
+    <article><div class="icon">文</div><h3>Explain Like I'm 18</h3><p>Turns complex financial disclosures into simple, actionable explanations.</p></article>
+    <article><div class="icon">◎</div><h3>Explainable Score</h3><p>Every score is supported by visible reasons instead of a black-box verdict.</p></article>
+    <article><div class="icon">♢</div><h3>Awareness Simulator</h3><p>Practice recognizing manipulation techniques before encountering them in the real world.</p></article>
+  </div>
+</section>
+
+<section class="section simulator">
+  <div><div class="eyebrow">04 / AWARENESS SIMULATOR</div><h2>Learn to spot manipulation.</h2><p>Train with realistic scenarios. Choose the safest response.</p></div>
+  <div class="scenario">
+    <div class="chat"><div class="avatar">AI</div><div><small>Investment promoter</small><p>“Sir, invest ₹5,000 today. Guaranteed 30% return. Offer expires tonight!”</p></div></div>
+    <div class="choices">
+      <button onclick="choice(this,false)">A. Send money immediately</button>
+      <button onclick="choice(this,true)">B. Ask for verifiable registration and risk details</button>
+      <button onclick="choice(this,false)">C. Share OTP to confirm identity</button>
+    </div>
+    <div id="simResult" class="sim-result"></div>
+  </div>
+</section>
+
+<section class="section architecture">
+  <div class="eyebrow">05 / PRODUCT ARCHITECTURE</div><h2>AI safety layer for retail investors.</h2>
+  <div class="flow">
+    <div>USER<br><small>Message / PDF / Image</small></div><b>→</b><div>OCR + EXTRACTION<br><small>Claims & context</small></div><b>→</b><div>AI ANALYSIS<br><small>Risk patterns</small></div><b>→</b><div>EXPLAINABILITY<br><small>Score + actions</small></div>
+  </div>
+  <div class="stack"><span>React + Tailwind</span><span>Python / FastAPI</span><span>Multimodal LLM</span><span>OCR + PyMuPDF</span><span>SQLite / MongoDB</span></div>
+</section>
+
+<footer>
+  <div><div class="brand"><span class="shield">◆</span> NiveshRakshak AI</div><p>Team CLAIMMER · Sangyan Hackathon · IIT (BHU)</p></div>
+  <div class="footer-note">We don't tell investors what to buy.<br><strong>We help them understand what to verify.</strong></div>
+</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
